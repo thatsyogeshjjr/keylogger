@@ -1,0 +1,21 @@
+
+[ Tue Apr  9 17:57:17 2024 ]
+h	e	l	l	o	o	space	w	o	l	r	d	p	y	t	h	o	n	
+[ Tue Apr  9 17:57:27 2024 ]
+space	c	l	i	tab	enter	
+[ Tue Apr  9 17:57:37 2024 ]
+
+[ Tue Apr  9 17:57:47 2024 ]
+,	backspace	ctrl	shift	left	left	left	left	left	left	left	right shift	9	
+[ Tue Apr  9 17:57:57 2024 ]
+left	left	s	t	r	ctrl	s	ctrl	ctrl	c	
+[ Tue Apr  9 17:58:05 2024 ]
+up	up	up	down	enter	
+[ Tue Apr  9 17:58:15 2024 ]
+ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	ctrl	a	backspace	ctrl	s	
+[ Tue Apr  9 17:58:25 2024 ]
+ctrl	ctrl	ctrl	n	h	e	y	w	h	a	t	'	r	e	space	y	o	u	space	u	p	space	
+[ Tue Apr  9 17:58:35 2024 ]
+t	o	
+[ Tue Apr  9 17:58:45 2024 ]
+<END OF FILE>

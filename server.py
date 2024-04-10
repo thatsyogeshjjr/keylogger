@@ -4,19 +4,33 @@ import threading
 SERVER = '192.168.29.131'
 PORT = 8865
 password = 'bad_password!@#PQWERD'
-'''
-Problem: we do not know the server ip address.
-Though we can consider that we are on the same network of the victim to make it a bit easier
-One option can be to scan all open systems on the network for our port. That's what we will do
-'''
-
-
-
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((SERVER,PORT))
 s.listen(5)
 
 client,addr = s.accept()
-client.send(b'hello world')
+
+file_name = client.recv(1024).decode()
+file_size = client.recv(1024).decode()
+
+print(f'((({file_name}))) created.')
+
+open(file_name,'w').close()
+file = open(file_name, 'wb')
+file_bytes = b''
+done = False
+
+while not done:
+    data = client.recv(1024)
+    if file_bytes[-13:] == b'<END OF FILE>':
+        done = True
+    else:
+        file_bytes += data
+        print('wait...')
+
+file.write(file_bytes)
+s.close()
+client.close()
+    
 
