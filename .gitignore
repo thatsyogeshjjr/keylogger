@@ -1,1 +1,5 @@
 /.env
+key_logs.txt
+recv_key_logs.txt
+public.pem
+private.pem

