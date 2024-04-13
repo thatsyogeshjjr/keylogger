@@ -4,3 +4,4 @@ recv_key.log
 public.pem
 private.pem
 fernet.key
+fernet.enc

