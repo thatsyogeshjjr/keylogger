@@ -29,32 +29,32 @@ This tries to understand advanced set of keyloggers. By re-creating its function
 
 This requires [Python](python.org) to run.
 
-Install the the required libraries
+1. Install the the required libraries.
 
 ```
 pip install -r requirements.txt
 ```
 
-Generate keys for data exfiltration
+2. Generate keys for data exfiltration.
 
 ```
 python gen_key.py
 ```
 
-Start the keylogger
+3. Start the keylogger.
 
 ```
 python app.py
 ```
 
-Stop the keylogger and start the server for exfiltration
+4. Stop the keylogger and start the server for exfiltration.
 
 ```sh
 cd server
 python server.py
 ```
 
-In a seperate terminal start the exfiltration socket
+4. In a seperate terminal start the exfiltration socket.
 
 ```sh
 python exfil_revconn.py
