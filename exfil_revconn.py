@@ -58,4 +58,4 @@ def exfil_data():
     del_logs(b'hello world')
 
 
-exfil_data()
+# exfil_data()
