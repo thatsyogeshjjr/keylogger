@@ -5,3 +5,4 @@ public.pem
 private.pem
 fernet.key
 fernet.enc
+/__pycache__
