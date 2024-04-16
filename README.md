@@ -24,6 +24,7 @@ This tries to understand advanced set of keyloggers. By re-creating its function
 - [keyboard](https://pypi.org/project/keyboard/) - Get keystroke data for logging
 - [time](https://docs.python.org/3/library/time.html) - Get time tags for logging
 - [threading](https://docs.python.org/3/library/threading.html#module-threading) - handle client and logging events in threads
+- [configparser](https://docs.python.org/3/library/configparser.html) - handle server config data
 
 ## Installation
 
