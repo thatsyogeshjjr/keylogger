@@ -54,8 +54,7 @@ cd server
 python server.py
 ```
 
-4. In a seperate terminal start the exfiltration socket.
+4. Every 30minutes the client will hit the server with data.
 
-```sh
-python exfil_revconn.py
-```
+To modify the time settings
+goto `timely_exfil` function in `app.py`
