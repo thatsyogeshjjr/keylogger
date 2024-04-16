@@ -1,9 +1,14 @@
 import socket
 import rsa
 from cryptography.fernet import Fernet
+from configparser import ConfigParser
 
-SERVER = '192.168.29.131'
-PORT = 8865
+config = ConfigParser()
+config.read("config.cfg")
+
+
+SERVER = config['SERVER']['IP']
+PORT = int(config['SERVER']['PORT'])
 
 # Define functions before socket binding
 
