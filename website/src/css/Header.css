@@ -5,7 +5,7 @@ h1 {
 #title-text {
   font-size: xx-large;
   display: inline-flex;
-  margin: 12px 0px 44px;
+  margin: 12px 0px 2px;
   width: max-content;
 }
 @keyframes flickerAnimation {
@@ -24,4 +24,10 @@ h1 {
   font-size: xx-large;
   margin: 0;
   animation: flickerAnimation 1.8s infinite;
+}
+
+@media (max-width: 885px) {
+  #title-text {
+    margin: 12px 0px 44px;
+  }
 }
