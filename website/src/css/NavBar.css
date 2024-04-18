@@ -1,0 +1,19 @@
+#NavBar {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box;
+  border: 3px solid #fff;
+  border-radius: 50px;
+  background-color: #151515;
+  color: #fff;
+  width: fit-content;
+
+  padding-right: 34px;
+}
+
+#NavBar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
