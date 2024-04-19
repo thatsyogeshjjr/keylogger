@@ -99,10 +99,10 @@ a {
 
 code {
   font-family: Consolas, "courier new";
-  color: #34aa38;
-  background-color: #ffffff4b;
+  color: #72b374;
+  background-color: #111111;
   border-radius: 90px;
-  border: 1px solid #fff;
+  /* border: 1px solid #fff; */
   padding: 0.5px 9px 0.5px;
   font-size: 105%;
 }
