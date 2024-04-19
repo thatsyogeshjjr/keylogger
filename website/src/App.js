@@ -11,7 +11,19 @@ function App() {
         </div>
         <div className="terminals">
           <Terminal data="Features.txt" />
-          {/* <Terminal id="dev-info-rt" /> */}
+          <br />
+          <br />
+          <br />
+          <div className="proj-link">
+            <h2>Visit the project at GitHub</h2>({" "}
+            <a
+              href="https://github.com/thatsyogeshjjr/keylogger"
+              target="_blank"
+            >
+              thatsyogeshjjr/Keylogger
+            </a>{" "}
+            )
+          </div>
         </div>
       </div>
       <div className="right">
