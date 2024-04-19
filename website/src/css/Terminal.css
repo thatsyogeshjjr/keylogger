@@ -10,12 +10,23 @@
   border-color: #f0f0f0;
 
   height: 16rem;
-  width: 36rem;
+  width: 90%;
 
   padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
+  padding-top: 12px;
   color: #ffffff;
+}
+
+#logo {
+  height: 19px;
+  border-radius: 180px;
+  border: 2px #ffffff00 solid;
+}
+
+.data {
+  height: 80%;
+  overflow-y: scroll;
 }
 
 .terminal * {
@@ -23,11 +34,28 @@
   margin-bottom: 0;
 }
 
+strong {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+#how-to {
+  font-size: 0.5cm;
+  text-decoration: underline;
+}
+
 .titlebar {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+#title-content {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
 }
 
 .title-buttons {
@@ -53,22 +81,59 @@
   background-color: #d73b3b;
 }
 
-ul {
-  list-style: none;
+#gap {
+  margin-bottom: 14px;
 }
 
-input {
+ol li {
+  padding-bottom: 12px;
+}
+
+ol li p {
+  margin-bottom: 2px;
+}
+
+a {
+  color: #34aa38;
+}
+
+code {
+  font-family: Consolas, "courier new";
+  color: #34aa38;
+  background-color: #ffffff4b;
+  border-radius: 90px;
+  border: 1px solid #fff;
+  padding: 0.5px 9px 0.5px;
+  font-size: 105%;
+}
+
+.dev-info {
+  display: flex;
+  height: 80%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.social-imgs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-imgs a img {
+  height: min-content;
+  width: 90px;
   border-radius: 180px;
-  color: #cfad56;
-}
-
-input:checked ~ .checkmark {
-  background-color: red;
 }
 
 @media (max-width: 885px) {
   .terminal {
     height: 270px;
-    width: 80vw;
+    width: 96vw;
+    margin: 4px 15px 4px;
   }
 }

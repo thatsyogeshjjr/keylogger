@@ -10,13 +10,16 @@ function App() {
           <Header />
         </div>
         <div className="terminals">
-          <Terminal data="Features" />
+          <Terminal data="Features.txt" />
           {/* <Terminal id="dev-info-rt" /> */}
         </div>
       </div>
       <div className="right">
-        <Terminal data="Keylogger.py - Info" />
-        <Terminal data="Developer.cnf" />
+        <Terminal
+          className="info-terminal rt-terminal"
+          data="Keylogger.py - Info"
+        />
+        <Terminal className="dev-terminal rt-terminal" data="Developer.cnf" />
       </div>
     </div>
   );

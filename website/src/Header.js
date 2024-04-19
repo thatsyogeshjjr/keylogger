@@ -7,7 +7,7 @@ export var Header = () => {
       <h1 id="title-text">
         &gt; ./Keylogger.py<h1 id="cursor">_</h1>
       </h1>
-      <NavBar />
+      {/* <NavBar /> */}
     </>
   );
 };

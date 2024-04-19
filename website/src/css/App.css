@@ -6,11 +6,10 @@
 }
 
 html {
-  background-color: #151515;
-}
-
-h1 {
-  font-size: xx-large;
+  /* background-color: #151515; */
+  background-image: url("https://images.pexels.com/photos/4814074/pexels-photo-4814074.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4814074.jpg&fm=jpg&w=1920&h=1080");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .title {
@@ -29,6 +28,7 @@ h1 {
 }
 
 .right {
+  width: 30vw;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -36,9 +36,9 @@ h1 {
 }
 
 @media (max-width: 885px) {
-  .right {
+  /* .right {
     display: none;
-  }
+  } */
 
   .left {
     width: 100vw;
@@ -55,10 +55,13 @@ h1 {
     flex-direction: column;
     gap: 26px;
   }
+
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-@media (max-width: 885px) {
-  #dev-info-rt {
-    display: none;
-  }
+.dev-terminal {
+  display: none;
 }

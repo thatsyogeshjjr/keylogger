@@ -15,7 +15,7 @@
   flex-direction: row;
   gap: 2rem;
 }
-
+/* 
 @media (max-width: 885px) {
   #NavBar {
     border-radius: 12px;
@@ -29,5 +29,11 @@
     align-items: center;
     gap: 20px;
     padding: 24px 12px 24px;
+  }
+} */
+@media (max-width: 885px) {
+  #NavBar {
+    margin: 3px 4px 3px;
+    padding: 12px 24px 12px;
   }
 }
